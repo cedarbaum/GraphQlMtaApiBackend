@@ -1,0 +1,27 @@
+on: [push]
+
+env:
+  CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v1
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - run: npm install && npm run build
+
+      - name: Deploy stack
+        run: npx cdk deploy --all --require-approval never

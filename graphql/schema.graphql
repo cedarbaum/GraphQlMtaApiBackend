@@ -1,0 +1,57 @@
+enum Direction {
+    NORTH
+    SOUTH
+}
+
+type Station @aws_api_key @aws_iam {
+    id: ID!
+    name: String!
+}
+
+type Trip @aws_api_key @aws_iam {
+    id: ID!
+    arrival: Float!
+    delayed: Boolean
+}
+
+type ServiceTrips @aws_api_key @aws_iam {
+    service: String!
+    trips: [Trip]!
+}
+
+type StationServiceTrips @aws_api_key @aws_iam {
+    stationId: ID!
+    serviceTrips: [ServiceTrips]!
+}
+
+type TrainTimesResponse @aws_api_key @aws_iam {
+    stationServiceTrips: [StationServiceTrips]!
+    updatedAt: Float!
+}
+
+type RunningServices @aws_api_key @aws_iam {
+    services: [String!]!
+    updatedAt: Float!
+}
+
+type SystemMetadata @aws_api_key @aws_iam {
+    runningServices: RunningServices!
+}
+
+type Query @aws_api_key @aws_iam {
+    nearestStations(lat: Float, lon: Float, numStations: Int): [Station]
+    trainTimes(stations: [String], services: [String]!, directions: [Direction]): TrainTimesResponse
+    systemMetadata: SystemMetadata
+}
+
+type NearestStationsQuery @aws_api_key @aws_iam {
+    nearestStations(lat: Float, lon: Float, numStations: Int): [Station]
+}
+
+type TrainTimesQuery @aws_api_key @aws_iam {
+    trainTimes(stations: [String], services: [String]!, directions: [Direction]): TrainTimesResponse
+}
+
+type SystemMetadataQuery @aws_api_key @aws_iam {
+    systemMetadata: SystemMetadata
+}

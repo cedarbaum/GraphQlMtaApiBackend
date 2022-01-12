@@ -1,0 +1,36 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "075e99a1b4ae31717d05cc683a41a6af1f773c21b9b6edd37b3a9442e0d54947"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.8"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "geographiclib": {
+            "hashes": [
+                "sha256:8f441c527b0b8a26cd96c965565ff0513d1e4d9952b704bf449409e5015c77b7",
+                "sha256:ac400d672b8954b0306bca890b088bb8ba2a757dc8133cca0b878f34b33b2740"
+            ],
+            "version": "==1.52"
+        },
+        "geopy": {
+            "hashes": [
+                "sha256:58b7edf526b8c32e33126570b5f4fcdfaa29d4416506064777ae8d84cd103fdd",
+                "sha256:8f1f949082b964385de61fcc3a667a6a9a6e242beb1ae8972449f164b2ba0e89"
+            ],
+            "index": "pypi",
+            "version": "==2.2.0"
+        }
+    },
+    "develop": {}
+}
