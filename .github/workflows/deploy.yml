@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
 
 env:
   CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
