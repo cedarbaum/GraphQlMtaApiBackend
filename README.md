@@ -21,7 +21,7 @@ The following environment variables are used:
 
 ## Docker
 
-Before deploying the infrastructure, the `mta-feed-fetcher` Docker image needs to be build and published:
+Before deploying the infrastructure, the `mta-feed-fetcher` Docker image needs to be built and published:
 
 1. `cd docker && ./build_and_push`
 
