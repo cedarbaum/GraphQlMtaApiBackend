@@ -23,7 +23,8 @@ The following environment variables are used:
 
 Before deploying the infrastructure, the `mta-feed-fetcher` Docker image needs to be built and published:
 
-1. `cd docker && ./build_and_push`
+1. `cd docker`
+2. `./build_and_push`
 
 This only needs to be done once initially and then subsequently when the image changes.
 
@@ -31,3 +32,8 @@ This only needs to be done once initially and then subsequently when the image c
 
 1. `npm install && npm run build`
 2. `cdk deploy --all`
+
+# Related projects
+
+-  [MTAPI](https://github.com/jonthornton/MTAPI)
+-  [Transiter](https://github.com/jamespfennell/transiter)
