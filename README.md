@@ -2,6 +2,8 @@
 
 This is a fully serverless GraphQL backend for interacting with the NYC [MTA API](https://api.mta.info/). It runs in AWS and is deployed using CDK.
 
+This is the backend for [closingdoors.nyc](https://github.com/cedarbaum/closingdoors.nyc).
+
 # Components
 
 - `UpdateFeedsService`: A Fargate service that takes a periodic snapshot of the MTA's real-time data feeds and persists them to S3 for consumption by other services.
