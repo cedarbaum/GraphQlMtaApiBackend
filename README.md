@@ -19,7 +19,7 @@ This is the backend for [closingdoors.nyc](https://github.com/cedarbaum/closingd
 The following environment variables are used:
 
 - `CONTAINER_REGISTRY`: the address of the container registry to push/pull the `mta-feed-fetcher` Docker image.
-- `OUTPUT_APPSYNC_DETAILS`: if true, output the AppSync URL and API key after deployment.
+- `OUTPUT_APPSYNC_DETAILS`: if true, output the AppSync URL and API key after deployment. These are considered secrets and are not output in builds hosted on GitHub.
 
 ## Docker
 
